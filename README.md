@@ -35,10 +35,10 @@
 ---
 
 ## 1. Tổng Quan Ứng Dụng
-
+Xây dựng một ứng dụng Android hoàn chỉnh bằng **MIT App Inventor** – nền tảng lập trình trực quan dạng kéo-thả (drag & drop).
 Ứng dụng **Deadline Checker** được xây dựng trên nền tảng **MIT App Inventor 2** — công cụ lập trình trực quan dành cho Android, không cần viết code thuần, thay vào đó là kéo thả giao diện và ghép block logic.
 
-Xây dựng một ứng dụng Android hoàn chỉnh bằng **MIT App Inventor** – nền tảng lập trình trực quan dạng kéo-thả (drag & drop). Ứng dụng gồm **3 màn hình (Screen)** với các chức năng:
+
 
 | Screen | Tên | Chức năng |
 |--------|-----|-----------|
@@ -313,39 +313,22 @@ Mỗi loại block có màu sắc riêng để dễ nhận biết:
 
 **Backpack** (Ba lô) là tính năng clipboard đặc biệt trong Blocks Editor, cho phép **sao chép block** giữa các Screen hoặc thậm chí giữa các project khác nhau.
 
-**Icon Backpack** nằm ở **góc trên bên phải** của Blocks Editor (hình chiếc ba lô 🎒).
+**Icon Backpack** nằm ở **góc trên bên phải** của Blocks Editor.
 
-> 📸 **[Chèn ảnh chụp vị trí icon Backpack trên thanh công cụ Blocks Editor]**
+<img width="596" height="337" alt="image" src="https://github.com/user-attachments/assets/415f3cd3-5648-4550-9207-cc6b3f803acf" />
 
 #### Cách sử dụng Backpack:
 
-```
-  CÁCH THÊM VÀO BACKPACK:
-  ┌─────────────────────────────────────────────────────────┐
-  │  Bước 1: Click chuột phải vào block muốn copy           │
-  │          ┌─────────────────────────────┐                │
-  │          │ ✂  Duplicate                │                │
-  │          │ 🗑  Delete                  │                │
-  │          │ 💬  Add Comment             │                │
-  │          │ 🎒  Add to Backpack  ◄─────│── chọn cái này │
-  │          │ ⬇  Collapse Block          │                │
-  │          └─────────────────────────────┘                │
-  │                                                         │
-  │  Bước 2: Block được copy vào Backpack                   │
-  │          → Icon ba lô sáng lên, có số đếm               │
-  └─────────────────────────────────────────────────────────┘
+##### CÁCH THÊM VÀO BACKPACK:
+Bước 1: Click chuột phải vào block muốn copy 
+<img width="534" height="425" alt="image" src="https://github.com/user-attachments/assets/1993e6d8-a097-4dd4-ae27-f2b5e0d8caac" />
+Bước 2: Block được copy vào Backpack → Icon ba lô thay đổi
 
-  CÁCH LẤY RA TỪ BACKPACK:
-  ┌─────────────────────────────────────────────────────────┐
-  │  Bước 1: Chuyển sang Screen hoặc project khác           │
-  │                                                         │
-  │  Bước 2: Click vào icon 🎒 Backpack (góc trên phải)     │
-  │          → Danh sách block đã lưu xuất hiện             │
-  │                                                         │
-  │  Bước 3: Kéo block từ Backpack thả vào workspace        │
-  │          → Block được copy (bản gốc vẫn còn trong Backpack) │
-  └─────────────────────────────────────────────────────────┘
-```
+##### CÁCH LẤY RA TỪ BACKPACK:
+Bước 1: Chuyển sang Screen hoặc project khác
+Bước 2: Click vào icon 🎒 Backpack → Danh sách block đã lưu xuất hiện 
+Bước 3: Kéo block từ Backpack thả vào workspace → Block được copy (bản gốc vẫn còn trong Backpack)
+<img width="557" height="655" alt="image" src="https://github.com/user-attachments/assets/02b6e025-3f64-4546-8ebe-9d65b638a52a" />
 
 #### Backpack hoạt động ở đâu?
 
@@ -364,37 +347,30 @@ Mỗi loại block có màu sắc riêng để dễ nhận biết:
 
 ## 4. Thiết Kế & Lập Trình Từng Screen
 
+### Bước 1 – Đăng nhập và tạo project mới
+
+1. Truy cập **[https://appinventor.mit.edu](https://appinventor.mit.edu)**
+2. Nhấn **"Create Apps!"** → Đăng nhập bằng tài khoản Google
+3. Chọn **Projects → Start new project**
+4. Đặt tên project (không dấu, không khoảng trắng): ví dụ `DeadlineChecker`
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/86cd1fb9-6c81-4c4d-bbd3-5dba258f881e" />
+
+> ✅ Giao diện chính gồm 2 phần: **Designer** (thiết kế giao diện) và **Blocks** (lập trình logic)
+
+### Bước 2 – Thêm Screen mới
+
+1. Ở góc trên cùng, nhấn **"Add Screen"**
+2. Đặt tên: `Screen2`, `Screen3`
+3. Mỗi screen được thiết kế và lập trình độc lập
+
 ---
 
 ### Screen 1 – About (Giới Thiệu Bản Thân)
 
 #### 🎨 Bố Cục Giao Diện
 
-```
-┌─────────────────────────────┐
-│         Screen 1            │
-│         (About)             │
-├─────────────────────────────┤
-│                             │
-│    [  Ảnh đại diện  ]       │
-│                             │
-│   Họ và tên:                │
-│   Nguyễn Văn A              │
-│                             │
-│   MSSV: 2024XXXXXXXX        │
-│                             │
-│   Lớp: KTPM2024             │
-│                             │
-│   Trường: ĐH ABC            │
-│                             │
-│  ┌────────────┐ ┌─────────┐ │
-│  │📅 Kiểm tra│ │📚 Tài   │ │
-│  │  Deadline │ │  liệu   │ │
-│  └────────────┘ └─────────┘ │
-└─────────────────────────────┘
-```
-
-> 📸 **[Chèn ảnh chụp màn hình Designer – Screen 1 tại đây]**
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/8f06cd19-d1e4-4c1d-b336-70a2d9beb393" />
 
 #### 📋 Danh Sách Components & Cấu Hình
 
