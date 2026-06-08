@@ -22,9 +22,8 @@
 - [3. Lập Trình Bằng Block](#3-lập-trình-bằng-block)
   - [3.1 Bản Chất Của Block Programming](#31-bản-chất-của-block-programming)
   - [3.2 Phân Loại Block](#32-phân-loại-block)
-  - [3.3 Ưu Điểm So Với Viết Code](#33-ưu-điểm-so-với-viết-code)
-  - [3.4 Nhược Điểm](#34-nhược-điểm)
-  - [3.5 Backpack – Copy Paste Block](#35-backpack--copy-paste-block)
+  - [3.3 Ưu Điểm Và Nhược Điểm So Với Viết Code](#33-ưu-điểm-và-nhược-điểm-so-với-viết-code)
+  - [3.4 Backpack – Copy Paste Block](#34-backpack--copy-paste-block)
 - [4. Thiết Kế & Lập Trình Từng Screen](#4-thiết-kế--lập-trình-từng-screen)
   - [Screen 1 – About](#screen-1--about-giới-thiệu-bản-thân)
   - [Screen 2 – Kiểm Tra Deadline](#screen-2--kiểm-tra-deadline)
@@ -91,63 +90,25 @@ DeadlineChecker/
 ### 2.1 Giao Diện Tổng Thể
 
 MIT App Inventor 2 (AI2) là môi trường lập trình trực quan chạy trên trình duyệt, truy cập tại `appinventor.mit.edu`. Toàn bộ môi trường làm việc chia thành **2 chế độ chính** chuyển đổi bằng nút ở góc trên phải:
+#### 1. DESIGNER : Thiết kế giao diện người dùng (UI) bằng cách kéo thả component vào màn hình điện thoại
+<img width="1486" height="872" alt="image" src="https://github.com/user-attachments/assets/ac30810b-1219-43c4-a599-6cfbf7aca924" />
 
-```
-╔══════════════════════════════════════════════════════════════════╗
-║              MIT App Inventor 2 — Giao diện chính               ║
-╠════════════════════════════╦═════════════════════════════════════╣
-║                            ║                                     ║
-║    🎨  DESIGNER            ║    🔧  BLOCKS EDITOR                ║
-║                            ║                                     ║
-║  Thiết kế giao diện        ║  Lập trình logic bằng               ║
-║  người dùng (UI) bằng      ║  cách kéo thả các                   ║
-║  cách kéo thả component    ║  khối lệnh màu sắc                  ║
-║  vào màn hình điện thoại   ║  và ghép chúng lại                  ║
-║                            ║                                     ║
-╚════════════════════════════╩═════════════════════════════════════╝
-```
-
-> 📸 **[Chèn ảnh chụp toàn bộ giao diện MIT App Inventor tại đây]**
+#### 2. BLOCKS EDITOR : Lập trình logic bằng cách kéo thả các khối lệnh màu sắc và ghép chúng lại 
+<img width="1472" height="856" alt="image" src="https://github.com/user-attachments/assets/404f7280-513f-4f68-9115-13a7b84307dc" />
 
 ---
 
 ### 2.2 Chế Độ Designer – Thanh Công Cụ Có Gì?
 
 Khi ở chế độ **Designer**, màn hình chia thành **4 vùng làm việc**:
-
-```
-┌─────────────────┬───────────────────────┬──────────────┬──────────────────┐
-│    PALETTE      │       VIEWER          │  COMPONENTS  │   PROPERTIES     │
-│   (Kho linh     │   (Màn hình điện      │  (Cây thành  │  (Bảng thuộc     │
-│    kiện)        │    thoại ảo)          │   phần)      │   tính)          │
-│─────────────────│───────────────────────│──────────────│──────────────────│
-│                 │                       │              │                  │
-│ User Interface  │   ┌─────────────┐     │ ▼ Screen1    │ Width:           │
-│  ├─ Button      │   │             │     │   Label1     │  [Fill Parent ▼] │
-│  ├─ CheckBox    │   │  [Label]    │     │   Label2     │                  │
-│  ├─ DatePicker  │   │            │     │   Label3     │ Height:          │
-│  ├─ Image       │   │  [Button1] │     │   Button1    │  [Automatic  ▼] │
-│  ├─ Label       │   │  [Button2] │     │   Button2    │                  │
-│  ├─ ListPicker  │   │            │     │              │ Text:            │
-│  ├─ TextBox     │   │             │     │              │ [Kiểm tra     ]  │
-│  └─ ...         │   └─────────────┘     │              │                  │
-│                 │                       │              │ FontSize: [16]   │
-│ Layout          │   (kéo thả vào đây)   │              │ FontBold: [✓]    │
-│  ├─ Horiz...    │                       │              │ BackgroundColor: │
-│  ├─ Vertical... │                       │              │  [  Xanh   ]     │
-│  └─ Table...    │                       │              │                  │
-│                 │                       │              │ TextColor:       │
-│ Media           │                       │              │  [  Trắng  ]     │
-│  └─ WebViewer   │                       │              │                  │
-│                 │                       │              │ Visible: [✓]     │
-│ Connectivity    │                       │              │ Enabled: [✓]     │
-│ Sensors         │                       │              │                  │
-└─────────────────┴───────────────────────┴──────────────┴──────────────────┘
-```
+1. PALETTE (Kho linh kiện)
+2. VIEWER (Màn hình điện thoại ảo)
+3. COMPONENTS (Cây thành phần)
+4. PROPERTIES (Bảng thuộc tính)
 
 #### 🗃️ Chi Tiết Từng Vùng
 
-**① PALETTE – Kho linh kiện (cột trái)**
+**① PALETTE – Kho linh kiện**
 
 Đây là "kho vũ khí" chứa tất cả các thành phần có thể thêm vào app, chia theo nhóm:
 
@@ -162,20 +123,20 @@ Khi ở chế độ **Designer**, màn hình chia thành **4 vùng làm việc**
 | `Storage` | TinyDB, File, CloudDB | Lưu trữ dữ liệu |
 | `Connectivity` | Web, BluetoothClient | Kết nối mạng & Bluetooth |
 
-**② VIEWER – Màn hình điện thoại ảo (giữa)**
+**② VIEWER – Màn hình điện thoại ảo**
 
 - Hiển thị trực quan giao diện app đang được xây dựng
 - Kéo component từ Palette thả vào đây để thêm vào app
 - Click vào component trong Viewer để chỉnh sửa
 - Không thể tương tác thật (bấm nút không chạy được) — đây chỉ là bản xem trước
 
-**③ COMPONENTS – Cây thành phần (phải trên)**
+**③ COMPONENTS – Cây thành phần**
 
 - Liệt kê toàn bộ component đã thêm theo dạng cây phân cấp
 - Click vào tên component để chọn và chỉnh sửa
 - Có thể đổi tên (Rename), xóa (Delete) component tại đây
 
-**④ PROPERTIES – Bảng thuộc tính (phải dưới)**
+**④ PROPERTIES – Bảng thuộc tính**
 
 - Hiển thị toàn bộ thuộc tính của component đang được chọn
 - Thay đổi trực tiếp: gõ vào ô, chọn màu, tick checkbox...
@@ -184,23 +145,8 @@ Khi ở chế độ **Designer**, màn hình chia thành **4 vùng làm việc**
 
 ### 2.3 Kéo Thả & Thay Đổi Thuộc Tính
 
-#### 🖱️ Quy Trình Kéo Thả Component
-
-```
-  PALETTE                    VIEWER                  PROPERTIES
-┌──────────┐              ┌──────────┐              ┌──────────────┐
-│          │   ① Giữ     │          │   ③ Chọn    │              │
-│  Button  │──────────►  │ [Button] │─────────►   │ Text:        │
-│          │   chuột &   │          │   component  │  [Đánh giá ] │
-│          │   kéo sang  │          │              │              │
-└──────────┘              └──────────┘   ④ Sửa    │ Width:       │
-                          ② Thả vào     thuộc tính │  [Fill    ▼] │
-                          vị trí mong              │              │
-                          muốn                     │ FontSize:[18]│
-                                                   └──────────────┘
-```
-
-**Các bước chi tiết:**
+#### Quy Trình Kéo Thả Component
+**Các bước:**
 
 ```
 Bước 1 ──► Tìm component phù hợp trong PALETTE bên trái
@@ -228,7 +174,7 @@ Bước 5 ──► Chỉnh sửa thuộc tính theo ý muốn:
             • Visible   → true/false (ẩn/hiện)
 ```
 
-#### 📐 Bảng Thuộc Tính Quan Trọng
+#### Bảng Thuộc Tính Quan Trọng
 
 | Thuộc tính | Kiểu giá trị | Ý nghĩa | Ví dụ |
 |-----------|-------------|---------|-------|
@@ -265,50 +211,66 @@ Mỗi block có hình dạng đặc biệt: phần lồi (🔌) và phần lõm 
 
 **So sánh trực quan:**
 
-```
-──────────────────────────────────────────────────────────────────
- CODE TRUYỀN THỐNG (Java/Kotlin)     │  BLOCK (MIT App Inventor)
-──────────────────────────────────────────────────────────────────
+## ☕ CODE TRUYỀN THỐNG (Java/Kotlin)
 
- // Sự kiện click nút                │  ┌──────────────────────────────┐
- button.setOnClickListener(new       │  │ 🟡 when Button1 . Click      │
-   View.OnClickListener() {          │  │    do                        │
-     @Override                       │  │  ┌───────────────────────┐   │
-     public void onClick(View v) {   │  │  │ 🟠 if    ◄ 🔵 ngay ►  │   │
-       int ngay = Integer.parseInt(  │  │  │       ≤  ◄ 🟢  1  ►   │   │
-         txtNgay.getText().toString()│  │  │  then                  │   │
-       );                            │  │  │  ┌─────────────────┐  │   │
-       if (ngay <= 1) {              │  │  │  │ 🔵 set Label1   │  │   │
-         label.setText("💀");        │  │  │  │   .Text to      │  │   │
-       }                             │  │  │  │ ◄ 🟢 "💀 Nguy" ►│  │   │
-     }                               │  │  │  └─────────────────┘  │   │
- });                                 │  │  └───────────────────────┘   │
-                                     │  └──────────────────────────────┘
-──────────────────────────────────────────────────────────────────
- ~10 dòng code, nhớ cú pháp Java     │  Kéo thả ~6 block, không cần nhớ
-──────────────────────────────────────────────────────────────────
+```java
+// Sự kiện click nút
+button.setOnClickListener(
+    new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            int ngay = Integer.parseInt(
+                txtNgay.getText().toString()
+            );
+
+            if (ngay <= 1) {
+                label.setText("💀");
+            }
+        }
+    }
+);
 ```
+
+**Nhận xét:**
+- Khoảng 10 dòng code
+- Phải nhớ cú pháp Java/Kotlin
+- Tự viết logic xử lý
+
+---
+
+## 🧩 BLOCK (MIT App Inventor)
+
+```mermaid
+flowchart LR
+
+    A["🟡 when Button1.Click"]
+
+    B["🔵 txtNgay.Text"]
+
+    C["🔵 parse text → số nguyên<br/>ngay"]
+
+    D{"🟠 ngay ≤ 1 ?"}
+
+    E["🔵 set Label.Text = 💀"]
+
+    F["Không làm gì"]
+
+    A --> B
+    B --> C
+    C --> D
+    D -->|Đúng| E
+    D -->|Sai| F
+```
+
+**Nhận xét:**
+- Kéo thả khoảng 6 block
+- Không cần nhớ cú pháp
+- Logic được xây dựng bằng giao diện trực quan
 
 **Cơ chế ghép block:**
 
-```
-  Block sự kiện (Event) — màu vàng, có "mũ" ở trên:
-  ┌─────────────────────────────┐
-  │ when  [Button1] . [Click]   │
-  │   do ▼                      │◄── Chỗ "cắm" block lệnh vào
-  └─────────────────────────────┘
-
-  Block lệnh — cắm vào vị trí "do":
-                  ┌─────────────────────────────┐
-                  │ set [Label_KQ] . [Text] to   │
-                  │  ◄─────────────────────────► │◄── Chỗ cắm giá trị
-                  └─────────────────────────────┘
-
-  Block giá trị — cắm vào chỗ cần giá trị:
-                              ┌───────────────┐
-                              │  "💀 Nguy!"  │  ← Block chuỗi (màu xanh lá)
-                              └───────────────┘
-```
+<img width="527" height="167" alt="image" src="https://github.com/user-attachments/assets/175a17fe-2a65-4ea5-86a4-b93232e400de" />
 
 ---
 
@@ -326,72 +288,28 @@ Mỗi loại block có màu sắc riêng để dễ nhận biết:
 | 🟣 **Tím** | Procedures (Hàm) | Tự định nghĩa hàm | `to [tên_hàm] do ...`, `call [tên_hàm]` |
 | ⚫ **Xám** | Logic | Điều kiện so sánh | `and`, `or`, `not`, `=`, `<`, `>`, `true`, `false` |
 
-> 📸 **[Chèn ảnh chụp màn hình Blocks Editor, hiển thị các block màu sắc tại đây]**
+<img width="320" height="535" alt="image" src="https://github.com/user-attachments/assets/dd2acaf6-6b60-4961-a741-acf2b20051ec" />
 
 ---
 
-### 3.3 Ưu Điểm So Với Viết Code
+### 3.3 Ưu Điểm Và Nhược Điểm So Với Viết Code
 
-```
-✅  Không lỗi cú pháp (Syntax Error)
-    → Block có hình dạng khớp nhau — sai kiểu dữ liệu thì không ghép được
-    → Lập trình viên Java mới thường mất hàng giờ tìm dấu ";" hay "}" bị thiếu
-
-✅  Trực quan — thấy ngay cấu trúc logic
-    → Nhìn vào màn hình block là hiểu ngay chương trình làm gì
-    → Code chữ: phải đọc dòng từng dòng, nhớ tên hàm, biết thư viện
-
-✅  Học tư duy lập trình nhanh
-    → Tập trung vào logic (IF này thì THEN kia) thay vì cú pháp ngôn ngữ
-    → Phù hợp người mới hoàn toàn, kể cả không biết lập trình
-
-✅  Prototype siêu nhanh
-    → Từ ý tưởng đến app chạy được: vài giờ thay vì vài ngày
-    → Test ngay trên điện thoại qua AI2 Companion mà không cần build
-
-✅  Không cần cài đặt môi trường phức tạp
-    → Chạy 100% trên trình duyệt — không cần Android Studio, JDK, Gradle
-    → Mở máy tính bất kỳ → vào web → code ngay
-
-✅  Dễ sửa và thử nghiệm
-    → Thay đổi block → bấm Connect → xem kết quả ngay lập tức trên điện thoại
-    → Không cần recompile như Java
-```
+| Nội dung                          | Ưu điểm                                                                                    | Nhược điểm                                                                                                             |
+| --------------------------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| Cú pháp lập trình                 | ✅ Hầu như không phát sinh lỗi cú pháp vì các block chỉ ghép được khi tương thích với nhau. | ❌ Không linh hoạt bằng ngôn ngữ lập trình truyền thống khi cần xử lý logic phức tạp.                                   |
+| Tính trực quan                    | ✅ Các block thể hiện rõ luồng xử lý, dễ quan sát và hiểu chương trình.                     | ❌ Khi số lượng block lớn, workspace trở nên rối rắm và khó theo dõi.                                                   |
+| Khả năng học tập                  | ✅ Giúp người mới tập trung vào tư duy thuật toán thay vì ghi nhớ cú pháp ngôn ngữ.         | ❌ Khó tiếp cận các khái niệm lập trình nâng cao như thiết kế kiến trúc phần mềm hoặc tối ưu mã nguồn.                  |
+| Tốc độ phát triển                 | ✅ Tạo nguyên mẫu (Prototype) nhanh, có thể xây dựng ứng dụng cơ bản chỉ trong vài giờ.     | ❌ Khi dự án lớn, tốc độ phát triển giảm do việc quản lý block trở nên khó khăn.                                        |
+| Môi trường phát triển             | ✅ Hoạt động hoàn toàn trên trình duyệt, không cần cài đặt Android Studio, JDK hay Gradle.  | ❌ Phụ thuộc vào kết nối Internet và máy chủ của MIT App Inventor.                                                      |
+| Kiểm thử ứng dụng                 | ✅ Có thể kết nối AI2 Companion để xem kết quả ngay trên điện thoại mà không cần build APK. | ❌ Khả năng debug và phân tích lỗi hạn chế hơn so với các IDE chuyên nghiệp.                                            |
+| Tính năng nền tảng                | ✅ Cung cấp đầy đủ các thành phần cơ bản để xây dựng ứng dụng Android đơn giản.             | ❌ Không hỗ trợ đầy đủ các API Android nâng cao, background service, animation phức tạp hoặc xử lý hệ thống chuyên sâu. |
+| Hiệu năng                         | ✅ Đáp ứng tốt các ứng dụng học tập, quản lý và tiện ích đơn giản.                          | ❌ Hiệu năng thấp hơn ứng dụng native được phát triển bằng Java hoặc Kotlin.                                            |
+| Hỗ trợ nền tảng                   | ✅ Có thể xuất trực tiếp tệp APK để cài đặt trên Android.                                   | ❌ Chỉ hỗ trợ Android, không hỗ trợ phát triển ứng dụng iOS.                                                            |
+| Làm việc nhóm và quản lý mã nguồn | ✅ Dễ chia sẻ dự án cho người mới học.                                                      | ❌ Không tích hợp Git/Version Control, việc cộng tác thường phải trao đổi tệp `.aia` thủ công.                          |
 
 ---
 
-### 3.4 Nhược Điểm
-
-```
-❌  Khó mở rộng khi ứng dụng phức tạp
-    → App có >10 màn hình, >100 block → workspace trở nên rối rắm, khó quản lý
-    → Không có tính năng tìm kiếm/lọc block hiệu quả như IDE chuyên nghiệp
-
-❌  Giới hạn tính năng so với lập trình native
-    → Không thể làm animation phức tạp, xử lý file nâng cao
-    → Một số API Android không có trong App Inventor
-    → Background service, notification nâng cao: không hỗ trợ
-
-❌  Chỉ build được Android
-    → Không thể tạo app iOS (iPhone/iPad)
-    → APK xuất ra không được tối ưu như app viết bằng Kotlin/Java thuần
-
-❌  Hiệu năng thấp hơn
-    → App AI2 chạy chậm hơn app native vì qua thêm lớp trung gian
-    → Xử lý dữ liệu lớn hoặc tính toán nặng: không phù hợp
-
-❌  Không có version control tích hợp
-    → Không dùng được Git để quản lý lịch sử thay đổi
-    → Làm nhóm: mỗi người phải export .aia và trao đổi thủ công
-
-❌  Phụ thuộc vào server MIT
-    → Nếu server MIT bảo trì hoặc mất kết nối → không làm việc được
-    → Dữ liệu lưu trên cloud của MIT, không toàn quyền kiểm soát
-```
-
----
-
-### 3.5 Backpack – Copy Paste Block
+### 3.4 Backpack – Copy Paste Block
 
 **Backpack** (Ba lô) là tính năng clipboard đặc biệt trong Blocks Editor, cho phép **sao chép block** giữa các Screen hoặc thậm chí giữa các project khác nhau.
 
