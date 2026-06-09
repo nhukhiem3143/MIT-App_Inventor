@@ -366,279 +366,292 @@ Bước 3: Kéo block từ Backpack thả vào workspace → Block được copy
 
 ---
 
-### Screen 1 – About (Giới Thiệu Bản Thân)
+### Screen 1 – About me (Giới Thiệu Bản Thân)
 
-#### 🎨 Bố Cục Giao Diện
+#### Cách kéo thả và chỉnh thuộc tính
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/8f06cd19-d1e4-4c1d-b336-70a2d9beb393" />
+1. Trong tab **Designer**, tìm component trong bảng **Palette** bên trái
+2. **Kéo** component vào vùng **Viewer** (khung giả lập điện thoại ở giữa)
+3. Sau khi thả, click chọn component → bảng **Properties** bên phải sẽ hiện ra
+4. Chỉnh các thuộc tính: màu sắc, font chữ, kích thước, căn lề...
+
+#### Cấu trúc cây thành phần giao diện (Component Tree)
+```
+Screen1
+└── VerticalArrangement1
+    ├── Avatar
+    ├── HoTen
+    ├── Label_HoTen
+    │
+    ├── HorizontalArrangement1
+    │   ├── Label_Icon_MSSV
+    │   └── VerticalArrangement2
+    │       ├── LabelMSSV
+    │       └── Label_MoTa_MSSV
+    │
+    ├── HorizontalArrangement2
+    │   ├── Label_Icon_lop
+    │   └── VerticalArrangement3
+    │       ├── Label_Lop
+    │       └── Label_MoTa_Lop
+    │
+    └── VerticalArrangement4
+        ├── Button_Deadline
+        └── Button_WebView
+```
 
 #### 📋 Danh Sách Components & Cấu Hình
-```
-Screen1
-└── VerticalArrangement1
-    ├── Avatar
-    ├── HoTen
-    ├── Label_HoTen
-    │
-    ├── HorizontalArrangement1
-    │   ├── Label_Icon_MSSV
-    │   └── VerticalArrangement2
-    │       ├── LabelMSSV
-    │       └── Label_MoTa_MSSV
-    │
-    ├── HorizontalArrangement2
-    │   ├── Label_Icon_lop
-    │   └── VerticalArrangement3
-    │       ├── Label_Lop
-    │       └── Label_MoTa_Lop
-    │
-    └── VerticalArrangement4
-        ├── Button_Deadline
-        └── Button_WebView
-```
+
+| Thành phần                 | Thuộc tính        | Giá trị              |
+| -------------------------- | ----------------- | -------------------- |
+| **Screen1**                | AppName           | Deadline Checker     |
+|                            | Title             | About me             |
+|                            | BackgroundColor   | #F5F2EA              |
+| **VerticalArrangement1**   | Width             | Fill Parent          |
+|                            | Height            | Fill Parent          |
+|                            | AlignHorizontal   | Center               |
+|                            | AlignVertical     | Top                  |
+|                            | BackgroundColor   | None                 |
+| **Avatar**                 | Picture           | Upload ảnh đại diện  |
+|                            | Width             | 150px                |
+|                            | Height            | 150px                |
+|                            | ScalePictureToFit | true                 |
+| **HoTen**                  | Text              | Nguyễn Như Khiêm     |
+|                            | FontSize          | 20                   |
+|                            | FontBold          | true                 |
+|                            | TextColor         | #7A5A00              |
+| **Label_HoTen**            | Text              | Họ và tên            |
+|                            | FontSize          | 12                   |
+|                            | TextColor         | Gray                 |
+| **HorizontalArrangement1** | Width             | Fill Parent          |
+|                            | Height            | Automatic            |
+| **Label_Icon_MSSV**        | Text              | 🎓                   |
+|                            | FontSize          | 20                   |
+|                            | Width             | 40px                 |
+| **VerticalArrangement2**   | Width             | Automatic            |
+|                            | Height            | Automatic            |
+| **LabelMSSV**              | Text              | K225480106030        |
+|                            | FontSize          | 16                   |
+|                            | FontBold          | true                 |
+| **Label_MoTa_MSSV**        | Text              | Mã số sinh viên      |
+|                            | FontSize          | 12                   |
+|                            | TextColor         | Gray                 |
+| **HorizontalArrangement2** | Width             | Fill Parent          |
+|                            | Height            | Automatic            |
+| **Label_Icon_lop**         | Text              | 🏫                   |
+|                            | FontSize          | 20                   |
+|                            | Width             | 40px                 |
+| **VerticalArrangement3**   | Width             | Automatic            |
+|                            | Height            | Automatic            |
+| **Label_Lop**              | Text              | K58KTP               |
+|                            | FontSize          | 16                   |
+|                            | FontBold          | true                 |
+| **Label_MoTa_Lop**         | Text              | Lớp học              |
+|                            | FontSize          | 12                   |
+|                            | TextColor         | Gray                 |
+| **VerticalArrangement4**   | Width             | 80%                  |
+|                            | Height            | Automatic            |
+|                            | AlignHorizontal   | Center               |
+| **Button_Deadline**        | Text              | 📅 Kiểm tra Deadline |
+|                            | Width             | Fill Parent          |
+|                            | FontSize          | 16                   |
+|                            | FontBold          | true                 |
+|                            | TextColor         | White                |
+|                            | BackgroundColor   | #0F8B8D              |
+|                            | Shape             | Rounded              |
+| **Button_WebView**         | Text              | 📄 Tài liệu của tôi  |
+|                            | Width             | Fill Parent          |
+|                            | FontSize          | 16                   |
+|                            | FontBold          | true                 |
+|                            | TextColor         | White                |
+|                            | BackgroundColor   | #3B82F6              |
+|                            | Shape             | Rounded              |
+
+#### 🎨 Bố Cục Giao Diện
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/01d2809f-1501-4743-80b4-8aae86a938fb" />
+
+#### 🟡 Block Lập Trình – Screen1 (Xử Lý Điều Hướng Giữa Các Màn Hình)
+
+##### Chức năng
+
+* Khi nhấn **Button_Deadline** → chuyển sang **Screen2**.
+* Khi nhấn **Button_WebView** → chuyển sang **Screen3**.
+
+---
+
+#### Bước 1: Mở giao diện Blocks
+
+1. Mở dự án MIT App Inventor.
+2. Chọn **Screen1**.
+3. Nhấn tab **Blocks** ở góc trên bên phải.
+
+---
+
+#### Bước 2: Tạo sự kiện cho Button_Deadline
+
+##### Kéo khối sự kiện Click
+
+1. Trong danh sách bên trái chọn **Button_Deadline**.
+2. Kéo khối:
 
 ```text
-Screen1
-│  AppName: "Deadline Checker"
-│  Title: "Về Tôi"
-│  BackgroundColor: #F5F2EA
-│
-└── VerticalArrangement1
-      Width: Fill Parent
-      Height: Fill Parent
-      AlignHorizontal: Center
-      AlignVertical: Top
-      BackgroundColor: None
+when Button_Deadline.Click
+do
+```
+vào vùng làm việc.
 
-    ├── Avatar
-    │     Picture: [upload ảnh đại diện]
-    │     Width: 150px
-    │     Height: 150px
-    │     ScalePictureToFit: true
-    │
-    ├── HoTen
-    │     Text: "Nguyễn Như Khiêm"
-    │     FontSize: 20
-    │     FontBold: true
-    │     TextColor: #7A5A00
-    │
-    ├── Label_HoTen
-    │     Text: "Họ và tên"
-    │     FontSize: 12
-    │     TextColor: Gray
-    │
-    ├── HorizontalArrangement1
-    │     Width: Fill Parent
-    │     Height: Automatic
-    │
-    │   ├── Label_Icon_MSSV
-    │   │     Text: "🎓"
-    │   │     FontSize: 20
-    │   │     Width: 40px
-    │   │
-    │   └── VerticalArrangement2
-    │         Width: Automatic
-    │         Height: Automatic
-    │
-    │       ├── LabelMSSV
-    │       │     Text: "K225480106030"
-    │       │     FontSize: 16
-    │       │     FontBold: true
-    │       │
-    │       └── Label_MoTa_MSSV
-    │             Text: "Mã số sinh viên"
-    │             FontSize: 12
-    │             TextColor: Gray
-    │
-    ├── HorizontalArrangement2
-    │     Width: Fill Parent
-    │     Height: Automatic
-    │
-    │   ├── Label_Icon_lop
-    │   │     Text: "🏫"
-    │   │     FontSize: 20
-    │   │     Width: 40px
-    │   │
-    │   └── VerticalArrangement3
-    │         Width: Automatic
-    │         Height: Automatic
-    │
-    │       ├── Label_Lop
-    │       │     Text: "K58KTP"
-    │       │     FontSize: 16
-    │       │     FontBold: true
-    │       │
-    │       └── Label_MoTa_Lop
-    │             Text: "Lớp học"
-    │             FontSize: 12
-    │             TextColor: Gray
-    │
-    └── VerticalArrangement4
-          Width: 80%
-          Height: Automatic
-          AlignHorizontal: Center
+#### Thêm khối mở màn hình
 
-        ├── Button_Deadline
-        │     Text: "📅 Kiểm tra Deadline"
-        │     Width: Fill Parent
-        │     FontSize: 16
-        │     FontBold: true
-        │     TextColor: White
-        │     BackgroundColor: #0F8B8D
-        │     Shape: Rounded
-        │
-        └── Button_WebView
-              Text: "📄 Tài liệu của tôi"
-              Width: Fill Parent
-              FontSize: 16
-              FontBold: true
-              TextColor: White
-              BackgroundColor: #3B82F6
-              Shape: Rounded
+1. Trong nhóm **Control**.
+2. Kéo khối:
+
+```text
+open another screen screenName
 ```
 
-#### 🔧 Bước Thực Hiện Trong Designer
+đặt vào bên trong phần `do`.
 
-```
-Bước 1 ──► Tạo project mới tại appinventor.mit.edu
-            Projects → Start new project → Đặt tên: "DeadlineChecker"
+---
 
-Bước 2 ──► Thêm Screen2 và Screen3:
-            Palette menu → Add Screen → đặt tên "Screen2"
-            Lặp lại cho "Screen3"
+#### Bước 3: Tạo sự kiện cho Button_WebView
 
-Bước 3 ──► Quay lại Screen1
-            Kéo VerticalArrangement từ Layout vào Viewer
-            Chỉnh: Width = Fill Parent, Height = Fill Parent
+##### Kéo khối sự kiện Click
 
-Bước 4 ──► Kéo Image vào trong VerticalArrangement
-            Click Image → Properties → Picture → upload ảnh
+1. Chọn **Button_WebView**.
+2. Kéo khối:
 
-Bước 5 ──► Kéo 3 Label vào (HoTen, MSSV, Lop)
-            Chỉnh Text, FontSize, FontBold cho từng Label
-
-Bước 6 ──► Kéo HorizontalArrangement vào cuối
-            Width = Fill Parent
-
-Bước 7 ──► Kéo 2 Button vào HorizontalArrangement
-            Chỉnh Text, màu sắc, Width = Fill Parent cho mỗi button
+```text
+when Button_WebView.Click
+do
 ```
 
-#### 🟡 Block Lập Trình – Screen1
+ra vùng làm việc.
 
-> 📸 **[Chèn ảnh chụp màn hình Blocks Editor – Screen1 tại đây]**
+##### Thêm khối mở màn hình
 
-```
-╔══════════════════════════════════════════════════════════╗
-║  🟡 when  [Button_Deadline] . Click                      ║
-║       do                                                 ║
-║     ┌──────────────────────────────────────────────┐     ║
-║     │ 🟠 open another screen                        │     ║
-║     │         screenName: ◄ 🟢 "Screen2" ►         │     ║
-║     └──────────────────────────────────────────────┘     ║
-╚══════════════════════════════════════════════════════════╝
+1. Trong nhóm **Control**.
+2. Kéo khối:
 
-╔══════════════════════════════════════════════════════════╗
-║  🟡 when  [Button_WebView] . Click                       ║
-║       do                                                 ║
-║     ┌──────────────────────────────────────────────┐     ║
-║     │ 🟠 open another screen                        │     ║
-║     │         screenName: ◄ 🟢 "Screen3" ►         │     ║
-║     └──────────────────────────────────────────────┘     ║
-╚══════════════════════════════════════════════════════════╝
+```text
+open another screen screenName
 ```
 
-**Giải thích block:**
-- `when Button.Click` — block Event (vàng): lắng nghe sự kiện người dùng bấm nút
-- `open another screen` — block Control (cam): mở Screen khác, truyền tên Screen dưới dạng chuỗi
+vào phần `do`.
+
+---
+
+Người dùng nhấn nút trên màn hình chính (Screen1) sẽ được chuyển đến màn hình tương ứng theo chức năng đã thiết kế.
+
+#### Kết Quả
+<img width="1490" height="910" alt="image" src="https://github.com/user-attachments/assets/2938d154-ef6e-40fb-a5b8-62c5757a7489" />
 
 ---
 
 ### Screen 2 – Kiểm Tra Deadline
 
-#### 🎨 Bố Cục Giao Diện
-
+#### Cấu trúc cây thành phần giao diện (Component Tree)
+```text
+Screen2
+└── VerticalArrangement6
+    ├── Title
+    │
+    ├── VerticalArrangement1
+    │   └── VerticalArrangement2
+    │       ├── Label_Ngay
+    │       ├── Label_MoTa_Ngay
+    │       └── TextBox_Ngay
+    │
+    ├── VerticalArrangement4
+    │   ├── Label_PhanTram
+    │   ├── Label_MoTa_PhanTram
+    │   └── TextBox_PhanTram
+    │
+    ├── Button_DanhGia
+    │
+    ├── VerticalArrangement7
+    │   ├── Label_KetQua
+    │   └── Label_KhuyenNghi
+    │
+    └── VerticalArrangement5
+        ├── Button_AboutMe
+        └── Button_WebView
 ```
-┌─────────────────────────────┐
-│         Screen 2            │
-│    ⏰ Deadline Checker       │
-├─────────────────────────────┤
-│                             │
-│  Còn bao nhiêu ngày?        │
-│  ┌───────────────────────┐  │
-│  │   3                   │  │  ← TextBox (chỉ nhận số)
-│  └───────────────────────┘  │
-│                             │
-│  Đã hoàn thành bao nhiêu %? │
-│  ┌───────────────────────┐  │
-│  │   20                  │  │  ← TextBox (chỉ nhận số)
-│  └───────────────────────┘  │
-│                             │
-│  ┌───────────────────────┐  │
-│  │    🔍  Đánh giá       │  │  ← Button
-│  └───────────────────────┘  │
-│                             │
-│  ┌───────────────────────┐  │
-│  │ Mức độ nguy hiểm: 😨  │  │  ← Label kết quả
-│  │                       │  │
-│  │ Khuyến nghị:          │  │
-│  │ - Hủy kế hoạch đi chơi│  │
-│  │ - Mở laptop ngay      │  │
-│  └───────────────────────┘  │
-│                             │
-│  [◄ Quay lại Screen1]       │
-└─────────────────────────────┘
-```
-
-> 📸 **[Chèn ảnh chụp màn hình Designer – Screen2 tại đây]**
+---
 
 #### 📋 Danh Sách Components & Cấu Hình
 
-```
-Screen2
-│  Title: "⏰ Kiểm Tra Deadline"
-│
-├── Label_HuongDan1
-│     Text: "Còn bao nhiêu ngày?"
-│     FontSize: 16
-│     FontBold: true
-│
-├── TextBox_Ngay
-│     Hint: "Nhập số ngày còn lại (VD: 3)"
-│     NumbersOnly: true       ← CHỈ NHẬN SỐ
-│     Width: Fill Parent
-│
-├── Label_HuongDan2
-│     Text: "Đã hoàn thành bao nhiêu %?"
-│     FontSize: 16
-│     FontBold: true
-│
-├── TextBox_Phan
-│     Hint: "Nhập phần trăm (VD: 20)"
-│     NumbersOnly: true       ← CHỈ NHẬN SỐ
-│     Width: Fill Parent
-│
-├── Button_DanhGia
-│     Text: "🔍 Đánh giá"
-│     Width: Fill Parent
-│     FontSize: 18
-│     FontBold: true
-│
-├── Label_KetQua
-│     Text: ""                ← Để trống, sẽ điền sau khi bấm
-│     FontSize: 20
-│     FontBold: true
-│     Width: Fill Parent
-│
-├── Label_KhuyenNghi
-│     Text: ""                ← Để trống, sẽ điền sau khi bấm
-│     FontSize: 14
-│     Width: Fill Parent
-│
-└── Button_Back
-      Text: "◄ Quay lại"
-      Width: Fill Parent
-```
+| Thành phần               | Thuộc tính      | Giá trị                             |
+| ------------------------ | --------------- | ----------------------------------- |
+| **Screen2**              | AppName         | Deadline Checker                    |
+|                          | Title           | Kiểm Tra Deadline                   |
+|                          | BackgroundColor | #F5F2EA                             |
+| **VerticalArrangement6** | Width           | Fill Parent                         |
+|                          | Height          | Fill Parent                         |
+|                          | AlignHorizontal | Center                              |
+|                          | AlignVertical   | Top                                 |
+|                          | BackgroundColor | None                                |
+| **Title**                | Text            | ⏰ Kiểm tra Checker                 |
+|                          | FontSize        | 25                                  |
+|                          | FontBold        | true                                |
+|                          | TextColor       | #0F8B8D                             |
+| **VerticalArrangement1** | Width           | Fill Parent                         |
+|                          | Height          | Fill Parent                         |
+| **VerticalArrangement2** | Width           | 80%                                 |
+|                          | Height          | Automatic                           |
+| **Label_Ngay**           | Text            | 📅 Còn bao nhiêu ngày?              |
+|                          | FontSize        | 18                                  |
+|                          | FontBold        | true                                |
+| **Label_MoTa_Ngay**      | Text            | Nhập số ngày còn lại trước deadline |
+|                          | FontSize        | 14                                  |
+|                          | TextColor       | Gray                                |
+| **TextBox_Ngay**         | Hint            | VD: 3                               |
+|                          | NumbersOnly     | true                                |
+|                          | Width           | Fill Parent                         |
+| **VerticalArrangement4** | Width           | 80%                                 |
+|                          | Height          | Automatic                           |
+| **Label_PhanTram**       | Text            | 📊 Đã hoàn thành bao nhiêu %?       |
+|                          | FontSize        | 18                                  |
+|                          | FontBold        | true                                |
+| **Label_MoTa_PhanTram**  | Text            | Nhập phần trăm tiến độ hiện tại     |
+|                          | FontSize        | 14                                  |
+|                          | TextColor       | Gray                                |
+| **TextBox_PhanTram**     | Hint            | VD: 20                              |
+|                          | NumbersOnly     | true                                |
+|                          | Width           | Fill Parent                         |
+| **Button_DanhGia**       | Text            | 🔍 Đánh Giá                         |
+|                          | Width           | 50%                                 |
+|                          | FontSize        | 20                                  |
+|                          | FontBold        | true                                |
+|                          | TextColor       | White                               |
+|                          | BackgroundColor | #3B82F6                             |
+|                          | Shape           | Rounded                             |
+| **VerticalArrangement7** | Width           | 80%                                 |
+|                          | Height          | Automatic                           |
+|                          | BackgroundColor | White                               |
+| **Label_KetQua**         | Text            | *(để trống)*                        |
+|                          | FontSize        | 18                                  |
+|                          | FontBold        | true                                |
+| **Label_KhuyenNghi**     | Text            | *(để trống)*                        |
+|                          | FontSize        | 14                                  |
+| **VerticalArrangement5** | Width           | 80%                                 |
+|                          | Height          | Automatic                           |
+|                          | AlignHorizontal | Center                              |
+| **Button_AboutMe**       | Text            | 👤 About me                         |
+|                          | Width           | Fill Parent                         |
+|                          | FontSize        | 18                                  |
+|                          | FontBold        | true                                |
+|                          | TextColor       | White                               |
+|                          | BackgroundColor | #0F8B8D                             |
+|                          | Shape           | Rounded                             |
+| **Button_WebView**       | Text            | 📄 Tài Liệu cứu mạng               |
+|                          | Width           | Fill Parent                         |
+|                          | FontSize        | 18                                  |
+|                          | FontBold        | true                                |
+|                          | TextColor       | White                               |
+|                          | BackgroundColor | #0F8B8D                             |
+|                          | Shape           | Rounded                             |
+
+---
 
 #### 📊 Bảng Logic Đánh Giá
 
@@ -649,9 +662,12 @@ Screen2
 | `ngay ≤ 7` VÀ `phan ≤ 60%` | 😐 **Căng nhẹ** | Tăng tốc · Giảm Netflix đi |
 | Còn lại | 🙂 **An toàn** | Bạn là người hiếm hoi làm đồ án đúng tiến độ 👏 |
 
+#### 🎨 Bố Cục Giao Diện
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/5fedcc9f-3b5f-4a69-b103-35a7cd6a09de" />
+
+
 #### 🟡 Block Lập Trình – Screen2
 
-> 📸 **[Chèn ảnh chụp màn hình Blocks Editor – Screen2 tại đây]**
 
 ```
 ╔══════════════════════════════════════════════════════════════════╗
