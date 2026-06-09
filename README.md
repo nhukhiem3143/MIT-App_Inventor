@@ -373,54 +373,128 @@ Bước 3: Kéo block từ Backpack thả vào workspace → Block được copy
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/8f06cd19-d1e4-4c1d-b336-70a2d9beb393" />
 
 #### 📋 Danh Sách Components & Cấu Hình
-
 ```
 Screen1
+└── VerticalArrangement1
+    ├── Avatar
+    ├── HoTen
+    ├── Label_HoTen
+    │
+    ├── HorizontalArrangement1
+    │   ├── Label_Icon_MSSV
+    │   └── VerticalArrangement2
+    │       ├── LabelMSSV
+    │       └── Label_MoTa_MSSV
+    │
+    ├── HorizontalArrangement2
+    │   ├── Label_Icon_lop
+    │   └── VerticalArrangement3
+    │       ├── Label_Lop
+    │       └── Label_MoTa_Lop
+    │
+    └── VerticalArrangement4
+        ├── Button_Deadline
+        └── Button_WebView
+```
+
+```text
+Screen1
 │  AppName: "Deadline Checker"
-│  BackgroundColor: [màu theo sở thích]
 │  Title: "Về Tôi"
+│  BackgroundColor: #F5F2EA
 │
-├── VerticalArrangement1
-│     Width: Fill Parent
-│     Height: Fill Parent
-│     AlignHorizontal: Center
-│     AlignVertical: Top
-│
-│   ├── Image1
-│   │     Picture: [upload ảnh đại diện]
-│   │     Width: 150px
-│   │     Height: 150px
-│   │
-│   ├── Label_HoTen
-│   │     Text: "Họ và tên: Nguyễn Văn A"
-│   │     FontSize: 18
-│   │     FontBold: true
-│   │
-│   ├── Label_MSSV
-│   │     Text: "MSSV: 2024XXXXXXXX"
-│   │     FontSize: 16
-│   │
-│   ├── Label_Lop
-│   │     Text: "Lớp: KTPM2024"
-│   │     FontSize: 16
-│   │
-│   └── HorizontalArrangement1
-│         Width: Fill Parent
-│         AlignHorizontal: Center
-│
-│       ├── Button_Deadline
-│       │     Text: "📅 Kiểm tra Deadline"
-│       │     BackgroundColor: [màu cam]
-│       │     TextColor: White
-│       │     FontBold: true
-│       │     Width: Fill Parent
-│       │
-│       └── Button_WebView
-│             Text: "📚 Tài liệu cứu mạng"
-│             BackgroundColor: [màu xanh]
-│             TextColor: White
-│             FontBold: true
-│             Width: Fill Parent
+└── VerticalArrangement1
+      Width: Fill Parent
+      Height: Fill Parent
+      AlignHorizontal: Center
+      AlignVertical: Top
+      BackgroundColor: None
+
+    ├── Avatar
+    │     Picture: [upload ảnh đại diện]
+    │     Width: 150px
+    │     Height: 150px
+    │     ScalePictureToFit: true
+    │
+    ├── HoTen
+    │     Text: "Nguyễn Như Khiêm"
+    │     FontSize: 20
+    │     FontBold: true
+    │     TextColor: #7A5A00
+    │
+    ├── Label_HoTen
+    │     Text: "Họ và tên"
+    │     FontSize: 12
+    │     TextColor: Gray
+    │
+    ├── HorizontalArrangement1
+    │     Width: Fill Parent
+    │     Height: Automatic
+    │
+    │   ├── Label_Icon_MSSV
+    │   │     Text: "🎓"
+    │   │     FontSize: 20
+    │   │     Width: 40px
+    │   │
+    │   └── VerticalArrangement2
+    │         Width: Automatic
+    │         Height: Automatic
+    │
+    │       ├── LabelMSSV
+    │       │     Text: "K225480106030"
+    │       │     FontSize: 16
+    │       │     FontBold: true
+    │       │
+    │       └── Label_MoTa_MSSV
+    │             Text: "Mã số sinh viên"
+    │             FontSize: 12
+    │             TextColor: Gray
+    │
+    ├── HorizontalArrangement2
+    │     Width: Fill Parent
+    │     Height: Automatic
+    │
+    │   ├── Label_Icon_lop
+    │   │     Text: "🏫"
+    │   │     FontSize: 20
+    │   │     Width: 40px
+    │   │
+    │   └── VerticalArrangement3
+    │         Width: Automatic
+    │         Height: Automatic
+    │
+    │       ├── Label_Lop
+    │       │     Text: "K58KTP"
+    │       │     FontSize: 16
+    │       │     FontBold: true
+    │       │
+    │       └── Label_MoTa_Lop
+    │             Text: "Lớp học"
+    │             FontSize: 12
+    │             TextColor: Gray
+    │
+    └── VerticalArrangement4
+          Width: 80%
+          Height: Automatic
+          AlignHorizontal: Center
+
+        ├── Button_Deadline
+        │     Text: "📅 Kiểm tra Deadline"
+        │     Width: Fill Parent
+        │     FontSize: 16
+        │     FontBold: true
+        │     TextColor: White
+        │     BackgroundColor: #0F8B8D
+        │     Shape: Rounded
+        │
+        └── Button_WebView
+              Text: "📄 Tài liệu của tôi"
+              Width: Fill Parent
+              FontSize: 16
+              FontBold: true
+              TextColor: White
+              BackgroundColor: #3B82F6
+              Shape: Rounded
 ```
 
 #### 🔧 Bước Thực Hiện Trong Designer
