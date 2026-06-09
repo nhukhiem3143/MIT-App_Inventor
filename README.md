@@ -629,7 +629,7 @@ Screen2
 |                          | Height          | Automatic                           |
 |                          | BackgroundColor | White                               |
 | **Label_KetQua**         | Text            | *(để trống)*                        |
-|                          | FontSize        | 18                                  |
+|                          | FontSize        | 14                                  |
 |                          | FontBold        | true                                |
 | **Label_KhuyenNghi**     | Text            | *(để trống)*                        |
 |                          | FontSize        | 14                                  |
@@ -663,7 +663,7 @@ Screen2
 | Còn lại | 🙂 **An toàn** | Bạn là người hiếm hoi làm đồ án đúng tiến độ 👏 |
 
 #### 🎨 Bố Cục Giao Diện
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/5fedcc9f-3b5f-4a69-b103-35a7cd6a09de" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/aab1cc54-5002-4188-a0da-ade5f07c4028" />
 
 
 #### 🟡 Block Lập Trình – Screen2
