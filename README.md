@@ -668,65 +668,8 @@ Screen2
 
 #### 🟡 Block Lập Trình – Screen2
 
+<img width="1917" height="1079" alt="image" src="https://github.com/user-attachments/assets/fb4e6524-60e4-4a6b-826a-34c84aecaf4d" />
 
-```
-╔══════════════════════════════════════════════════════════════════╗
-║  🟡 when  [Button_DanhGia] . Click                               ║
-║       do                                                         ║
-║                                                                  ║
-║     🔴 initialize local [ngay] to                                ║
-║              ◄ 🟢 number ◄ 🔵 TextBox_Ngay.Text ► ►             ║
-║                                                                  ║
-║     🔴 initialize local [phan] to                                ║
-║              ◄ 🟢 number ◄ 🔵 TextBox_Phan.Text ► ►             ║
-║                                                                  ║
-║     ┌────────────────────────────────────────────────────────┐   ║
-║     │ 🟠 if  ⚫ [ngay] ≤ [1]  AND  ⚫ [phan] ≤ [10]          │   ║
-║     │    then                                                │   ║
-║     │      🔵 set Label_KetQua.Text to                       │   ║
-║     │              ◄ 🟢 "Mức độ nguy hiểm: 💀 Chúc may mắn" ►│   ║
-║     │      🔵 set Label_KhuyenNghi.Text to                   │   ║
-║     │              ◄ 🟢 "Khuyến nghị:                         │   ║
-║     │                    - Pha cà phê                         │   ║
-║     │                    - Tắt Facebook                       │   ║
-║     │                    - Cầu nguyện" ►                     │   ║
-║     │                                                        │   ║
-║     │ 🟠 else if  ⚫ [ngay] ≤ [3]  AND  ⚫ [phan] ≤ [30]     │   ║
-║     │    then                                                │   ║
-║     │      🔵 set Label_KetQua.Text to                       │   ║
-║     │              ◄ 🟢 "Mức độ nguy hiểm: 😨 Nguy hiểm" ►  │   ║
-║     │      🔵 set Label_KhuyenNghi.Text to                   │   ║
-║     │              ◄ 🟢 "Khuyến nghị:                         │   ║
-║     │                    - Hủy kế hoạch đi chơi               │   ║
-║     │                    - Mở laptop ngay" ►                 │   ║
-║     │                                                        │   ║
-║     │ 🟠 else if  ⚫ [ngay] ≤ [7]  AND  ⚫ [phan] ≤ [60]     │   ║
-║     │    then                                                │   ║
-║     │      🔵 set Label_KetQua.Text to                       │   ║
-║     │              ◄ 🟢 "Mức độ nguy hiểm: 😐 Căng nhẹ" ►   │   ║
-║     │      🔵 set Label_KhuyenNghi.Text to                   │   ║
-║     │              ◄ 🟢 "Khuyến nghị:                         │   ║
-║     │                    - Tăng tốc thôi                      │   ║
-║     │                    - Giảm Netflix đi" ►                │   ║
-║     │                                                        │   ║
-║     │ 🟠 else                                                │   ║
-║     │    then                                                │   ║
-║     │      🔵 set Label_KetQua.Text to                       │   ║
-║     │              ◄ 🟢 "Mức độ nguy hiểm: 🙂 An toàn" ►    │   ║
-║     │      🔵 set Label_KhuyenNghi.Text to                   │   ║
-║     │              ◄ 🟢 "Bạn là người hiếm hoi làm đồ án    │   ║
-║     │                    đúng tiến độ. 👏" ►                 │   ║
-║     └────────────────────────────────────────────────────────┘   ║
-╚══════════════════════════════════════════════════════════════════╝
-
-╔══════════════════════════════════════════════════════════╗
-║  🟡 when  [Button_Back] . Click                          ║
-║       do                                                 ║
-║     ┌───────────────────────────────────────────┐        ║
-║     │ 🟠 close screen                           │        ║
-║     └───────────────────────────────────────────┘        ║
-╚══════════════════════════════════════════════════════════╝
-```
 
 **Giải thích các block:**
 - `number(TextBox.Text)` — chuyển chuỗi văn bản sang số để so sánh được
@@ -758,8 +701,8 @@ Screen2
 │                             │
 │                             │
 │                             │
-│                             │
-│                             │
+│           btn (about me)                  │
+│           btn  ( Kiểm tra Deadline                │
 └─────────────────────────────┘
 ```
 
