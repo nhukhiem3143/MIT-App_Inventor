@@ -658,8 +658,8 @@ Screen2
 | Điều kiện | Mức độ | Khuyến nghị |
 |-----------|--------|-------------|
 | `ngay ≤ 1` VÀ `phan ≤ 10%` | 💀 **Chúc may mắn** | Pha cà phê · Tắt Facebook · Cầu nguyện |
-| `ngay ≤ 3` VÀ `phan ≤ 30%` | 😨 **Nguy hiểm** | Hủy kế hoạch đi chơi · Mở laptop ngay |
-| `ngay ≤ 7` VÀ `phan ≤ 60%` | 😐 **Căng nhẹ** | Tăng tốc · Giảm Netflix đi |
+| `ngay ≤ 3` VÀ `phan ≤ 50%` | 😨 **Nguy hiểm** | Hủy kế hoạch đi chơi · Mở laptop ngay |
+| `ngay ≤ 7` VÀ `phan ≤ 80%` | 😐 **Căng nhẹ** | Tăng tốc · Giảm Netflix đi |
 | Còn lại | 🙂 **An toàn** | Bạn là người hiếm hoi làm đồ án đúng tiến độ 👏 |
 
 #### 🎨 Bố Cục Giao Diện
@@ -682,65 +682,87 @@ Screen2
 
 ### Screen 3 – WebViewer
 
-#### 🎨 Bố Cục Giao Diện
-
-```
-┌─────────────────────────────┐
-│         Screen 3            │
-│    🌐 Tài Liệu Cứu Mạng    │
-├─────────────────────────────┤
-│ ┌────────┬────────┬───────┐ │
-│ │🐙 Git  │📚Stack │🤖 GPT│ │  ← Thanh chọn web
-│ └────────┴────────┴───────┘ │
-├─────────────────────────────┤
-│                             │
-│                             │
-│    [Nội dung trang web      │
-│     hiển thị ở đây          │
-│     — WebViewer Component]  │
-│                             │
-│                             │
-│                             │
-│           btn (about me)                  │
-│           btn  ( Kiểm tra Deadline                │
-└─────────────────────────────┘
-```
-
-> 📸 **[Chèn ảnh chụp màn hình Designer – Screen3 tại đây]**
-
-#### 📋 Danh Sách Components & Cấu Hình
+#### Cấu trúc cây thành phần giao diện (Component Tree)
 
 ```
 Screen3
-│  Title: "🌐 Tài Liệu Cứu Mạng"
-│
-├── HorizontalArrangement1    ← Thanh nút chọn web
-│     Width: Fill Parent
-│     Height: Automatic
-│
-│   ├── Button_GitHub
-│   │     Text: "🐙 GitHub"
-│   │     Width: Fill Parent
-│   │     BackgroundColor: [xám đậm]
-│   │     TextColor: White
-│   │
-│   ├── Button_Stack
-│   │     Text: "📚 Stack"
-│   │     Width: Fill Parent
-│   │     BackgroundColor: [cam]
-│   │     TextColor: White
-│   │
-│   └── Button_ChatGPT
-│         Text: "🤖 ChatGPT"
-│         Width: Fill Parent
-│         BackgroundColor: [xanh lá]
-│         TextColor: White
-│
-└── WebViewer1
-      Width: Fill Parent
-      Height: Fill Parent      ← Chiếm toàn bộ phần còn lại
-      HomeUrl: https://github.com
+└── VerticalArrangement5
+    └── Title
+└── VerticalArrangement6
+    ├── HorizontalArrangement1
+    │   ├── Button_ChatGPT
+    │   ├── Button_Stack
+    │   └── Button_Github
+    ├── WebViewer1
+    └── VerticalArrangement4
+        ├── Button_AboutMe
+        └── Button_Deadline
 ```
+
+#### 📋 Danh Sách Components & Cấu Hình
+
+| Thành phần | Thuộc tính | Giá trị |
+|------------|------------|----------|
+| **Screen3** | AppName | Deadline Checker |
+| | Title | Tài Liệu Cứu Mạng |
+| | BackgroundColor | #FFF8F0 |
+| **VerticalArrangement5** | Width | Fill Parent |
+| | Height | 50% |
+| | AlignHorizontal | Center |
+| | AlignVertical | Top |
+| | BackgroundColor | None |
+| **Title** | Text | 🌐 Tài Liệu Cứu Mạng |
+| | FontSize | 25 |
+| | FontBold | true |
+| | TextColor | White |
+| **VerticalArrangement6** | Width | Fill Parent |
+| | Height | Fill Parent |
+| **HorizontalArrangement1** | Width | Fill Parent |
+| | Height | Automatic |
+| | AlignHorizontal | Center |
+| **Button_ChatGPT** | Text | ChatGPT |
+| | Width | 30% |
+| | FontBold | true |
+| | TextColor | Black |
+| | BackgroundColor | White |
+| | Shape | Rounded |
+| **Button_Stack** | Text | Stack Overflow |
+| | Width | 30% |
+| | FontBold | true |
+| | TextColor | Black |
+| | BackgroundColor | #0F8B8D |
+| | Shape | Rounded |
+| **Button_Github** | Text | GitHub |
+| | Width | 30% |
+| | FontBold | true |
+| | TextColor | Black |
+| | BackgroundColor | #C15B5BC2 |
+| | Shape | Rounded |
+| **WebViewer1** | Width | Fill Parent |
+| | Height | Fill Parent |
+| | HomeUrl | https://github.com/nhukhiem3143/MIT-App_Inventor |
+| **VerticalArrangement4** | Width | 80% |
+| | Height | Automatic |
+| | AlignHorizontal | Center |
+| **Button_AboutMe** | Text | 🙋 About me |
+| | Width | Fill Parent |
+| | FontSize | 18 |
+| | FontBold | true |
+| | TextColor | White |
+| | BackgroundColor | #0F8B8D |
+| | Shape | Rounded |
+| **Button_Deadline** | Text | ⏰ Kiểm tra Deadline |
+| | Width | Fill Parent |
+| | FontSize | 18 |
+| | FontBold | true |
+| | TextColor | White |
+| | BackgroundColor | #0F8B8D |
+| | Shape | Rounded |
+
+#### 🎨 Bố Cục Giao Diện
+
+<img width="1919" height="1013" alt="image" src="https://github.com/user-attachments/assets/d13bd5ca-1aa8-4164-83e3-5b84a0a2049e" />
+
 
 > **💡 Vì sao chọn 3 trang web này?**  
 > Đây là bộ ba "vũ khí sinh tồn" của sinh viên CNTT khi deadline đến gần:
@@ -753,56 +775,22 @@ Screen3
 
 #### 🟡 Block Lập Trình – Screen3
 
-> 📸 **[Chèn ảnh chụp màn hình Blocks Editor – Screen3 tại đây]**
+<img width="1916" height="1034" alt="image" src="https://github.com/user-attachments/assets/58f2cb0a-1293-4fe7-b09e-cfbfa0a5c642" />
 
-```
-╔══════════════════════════════════════════════════════════╗
-║  🟡 when  Screen3 . Initialize                           ║
-║       do                                                 ║
-║     ┌─────────────────────────────────────────────┐      ║
-║     │ 🔵 call WebViewer1 . GoToUrl                │      ║
-║     │         url: ◄ 🟢 "https://github.com" ►    │      ║
-║     └─────────────────────────────────────────────┘      ║
-╚══════════════════════════════════════════════════════════╝
-
-╔══════════════════════════════════════════════════════════╗
-║  🟡 when  [Button_GitHub] . Click                        ║
-║       do                                                 ║
-║     ┌─────────────────────────────────────────────┐      ║
-║     │ 🔵 call WebViewer1 . GoToUrl                │      ║
-║     │         url: ◄ 🟢 "https://github.com" ►    │      ║
-║     └─────────────────────────────────────────────┘      ║
-╚══════════════════════════════════════════════════════════╝
-
-╔══════════════════════════════════════════════════════════╗
-║  🟡 when  [Button_Stack] . Click                         ║
-║       do                                                 ║
-║     ┌──────────────────────────────────────────────────┐ ║
-║     │ 🔵 call WebViewer1 . GoToUrl                     │ ║
-║     │         url: ◄ 🟢 "https://stackoverflow.com" ►  │ ║
-║     └──────────────────────────────────────────────────┘ ║
-╚══════════════════════════════════════════════════════════╝
-
-╔══════════════════════════════════════════════════════════╗
-║  🟡 when  [Button_ChatGPT] . Click                       ║
-║       do                                                 ║
-║     ┌───────────────────────────────────────────────┐    ║
-║     │ 🔵 call WebViewer1 . GoToUrl                  │    ║
-║     │         url: ◄ 🟢 "https://chatgpt.com" ►     │    ║
-║     └───────────────────────────────────────────────┘    ║
-╚══════════════════════════════════════════════════════════╝
-```
 
 **Giải thích block:**
-- `when Screen3.Initialize` — chạy ngay khi Screen3 được mở, tải trang mặc định
 - `call WebViewer1.GoToUrl` — lệnh điều hướng WebViewer đến URL chỉ định
 - Khi bấm nút nào → WebViewer tải trang tương ứng, không cần rời khỏi app
 
 ---
 
 ## 5. Kết Quả Chạy Ứng Dụng
-
-> 📸 **[Chèn ảnh chụp màn hình app đang chạy thực tế trên điện thoại tại đây]**
+### Screen 1
+<img width="720" height="1445" alt="a88d0284df455e1b07547" src="https://github.com/user-attachments/assets/7ad38211-c092-4149-a400-0d22c3bc0ccf" />
+### Screen 2
+<img width="720" height="1445" alt="4f75ef7c32bdb3e3eaac6" src="https://github.com/user-attachments/assets/cf8d68e9-e063-4ca4-b766-9730a527e820" />
+### Screen 3
+<img width="720" height="1445" alt="d7e8d1e10c208d7ed4315" src="https://github.com/user-attachments/assets/6a3137e1-a458-42a4-ba6e-3b84bb5403f1" />
 
 ### 🎯 Demo Các Kịch Bản
 
@@ -815,6 +803,8 @@ Output:  Mức độ nguy hiểm: 🙂 An toàn
          Bạn là người hiếm hoi làm đồ án
          đúng tiến độ. 👏
 ```
+<img width="720" height="1445" alt="57b453bd8e7c0f22566d4" src="https://github.com/user-attachments/assets/a792b554-d528-4a66-bfdb-3ff55be1f6df" />
+
 
 **Kịch bản 2 – Bắt đầu lo:**
 ```
@@ -826,6 +816,7 @@ Output:  Mức độ nguy hiểm: 😐 Căng nhẹ
          - Tăng tốc thôi
          - Giảm Netflix đi
 ```
+<img width="720" height="1445" alt="550bae0373c2f29cabd33" src="https://github.com/user-attachments/assets/0d6fbdb1-916d-42c5-b8e0-cb386da097c0" />
 
 **Kịch bản 3 – Báo động đỏ:**
 ```
@@ -837,10 +828,11 @@ Output:  Mức độ nguy hiểm: 😨 Nguy hiểm
          - Hủy kế hoạch đi chơi
          - Mở laptop ngay
 ```
+<img width="720" height="1445" alt="122d4a2697e716b94ff62" src="https://github.com/user-attachments/assets/a5c89b80-becd-4ece-bbe9-3c47aa057950" />
 
 **Kịch bản 4 – Không còn hy vọng:**
 ```
-Input:   Còn 1 ngày  |  Hoàn thành 0%
+Input:   Còn 1 ngày  |  Hoàn thành 1%
 ─────────────────────────────────────────
 Output:  Mức độ nguy hiểm: 💀 Chúc may mắn
 
@@ -849,45 +841,13 @@ Output:  Mức độ nguy hiểm: 💀 Chúc may mắn
          - Tắt Facebook
          - Cầu nguyện
 ```
-
----
-
-## 6. Quy Trình Hoàn Chỉnh
-
-```
-  BƯỚC 1                    BƯỚC 2                    BƯỚC 3
-  Tạo Project               Thêm Screens              Thiết kế UI
-  ─────────                 ────────────              ────────────
-  Vào                       Add Screen                DESIGNER:
-  appinventor.mit.edu   →   → Screen2             →   Kéo thả
-  → Start new project       → Screen3                 component
-  → Đặt tên project         (mỗi screen              từ Palette
-                            1 màn hình)               vào Viewer
-       │
-       ▼
-  BƯỚC 4                    BƯỚC 5                    BƯỚC 6
-  Chỉnh Properties          Lập trình Block           Test ứng dụng
-  ────────────────          ───────────────           ─────────────
-  Click component       →   BLOCKS EDITOR:        →   Connect →
-  → Properties panel        Kéo block Event           AI Companion
-  → Sửa Text,               → Ghép block              → Quét QR
-    Color, Size,              Control, Logic           → Test trực tiếp
-    Width, Height             → Gán giá trị            trên điện thoại
-       │
-       ▼
-  BƯỚC 7                    BƯỚC 8
-  Sửa lỗi                   Export & Nộp bài
-  ────────                  ────────────────
-  Xem lỗi logic         →   Build → APK
-  → Chỉnh block             Projects → Export .aia
-  → Test lại                → Nộp file .aia + báo cáo
-```
+<img width="720" height="1445" alt="db0c57078ac60b9852d71" src="https://github.com/user-attachments/assets/4b698ba8-d40c-4034-a494-24cbb7979859" />
 
 ---
 
 ## 7. Build & Xuất Ứng Dụng
 
-### 📲 Cách 1 – Test Realtime (Khuyên dùng khi làm)
+### 📲 Test Realtime (Khuyên dùng khi làm)
 
 ```
 1. Cài app "MIT AI2 Companion" từ Google Play Store
@@ -905,7 +865,7 @@ Output:  Mức độ nguy hiểm: 💀 Chúc may mắn
    → Mỗi lần thay đổi block/designer → app tự cập nhật
 ```
 
-### 📦 Cách 2 – Build APK (Dùng khi nộp bài)
+### 📦 Build APK
 
 ```
 1. Trên MIT App Inventor: menu "Build"
@@ -925,8 +885,10 @@ Output:  Mức độ nguy hiểm: 💀 Chúc may mắn
 
 6. App xuất hiện trong danh sách ứng dụng
 ```
+<img width="720" height="1445" alt="3840ea473786b6d8ef979" src="https://github.com/user-attachments/assets/44381585-19df-4b6a-9851-3129592fbd6c" />
+<img width="720" height="292" alt="16a1acf67437f569ac26" src="https://github.com/user-attachments/assets/a256993e-8de8-4b9c-b8e0-2f6f649b2b5c" />
 
-### 💾 Cách 3 – Export Project .aia (Backup & Nộp bài)
+### 💾 Export Project .aia
 
 ```
 Menu "Projects" → "Export selected project (.aia) to my computer"
@@ -934,24 +896,11 @@ Menu "Projects" → "Export selected project (.aia) to my computer"
 
 File .aia chứa TOÀN BỘ project: Designer + Blocks + Assets
 → Import lại: Projects → Import project (.aia)
-→ Đây là file cần nộp cùng với báo cáo này
 ```
 
 ---
 
 <div align="center">
-
----
-
-**📁 File nộp bài**
-
-| File | Mô tả |
-|:----:|-------|
-| `DeadlineChecker.aia` | Source code toàn bộ project |
-| `DeadlineChecker.apk` | File cài đặt Android |
-| `README.md` | Báo cáo này |
-
----
 
 *Báo cáo thực hành — Lập trình di động với MIT App Inventor 2*  
 *Ảnh minh họa tự chụp trong quá trình thực hiện*
