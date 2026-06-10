@@ -25,7 +25,7 @@
   - [3.3 Ưu Điểm Và Nhược Điểm So Với Viết Code](#33-ưu-điểm-và-nhược-điểm-so-với-viết-code)
   - [3.4 Backpack – Copy Paste Block](#34-backpack--copy-paste-block)
 - [4. Thiết Kế & Lập Trình Từng Screen](#4-thiết-kế--lập-trình-từng-screen)
-  - [Screen 1 – About](#screen-1--about-giới-thiệu-bản-thân)
+  - [Screen 1 – About me](#screen-1--about-me)
   - [Screen 2 – Kiểm Tra Deadline](#screen-2--kiểm-tra-deadline)
   - [Screen 3 – WebViewer](#screen-3--webviewer)
 - [5. Kết Quả Chạy Ứng Dụng](#5-kết-quả-chạy-ứng-dụng)
