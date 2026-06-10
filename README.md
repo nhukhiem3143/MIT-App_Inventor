@@ -29,8 +29,7 @@
   - [Screen 2 – Kiểm Tra Deadline](#screen-2--kiểm-tra-deadline)
   - [Screen 3 – WebViewer](#screen-3--webviewer)
 - [5. Kết Quả Chạy Ứng Dụng](#5-kết-quả-chạy-ứng-dụng)
-- [6. Quy Trình Hoàn Chỉnh](#6-quy-trình-hoàn-chỉnh)
-- [7. Build & Xuất Ứng Dụng](#7-build--xuất-ứng-dụng)
+- [6. Build & Xuất Ứng Dụng](#7-build--xuất-ứng-dụng)
 
 ---
 
@@ -366,7 +365,7 @@ Bước 3: Kéo block từ Backpack thả vào workspace → Block được copy
 
 ---
 
-### Screen 1 – About me (Giới Thiệu Bản Thân)
+### Screen 1 – About me
 
 #### Cách kéo thả và chỉnh thuộc tính
 
@@ -845,7 +844,7 @@ Output:  Mức độ nguy hiểm: 💀 Chúc may mắn
 
 ---
 
-## 7. Build & Xuất Ứng Dụng
+## 6. Build & Xuất Ứng Dụng
 
 ### 📲 Test Realtime (Khuyên dùng khi làm)
 
